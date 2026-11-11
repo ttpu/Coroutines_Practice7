@@ -31,7 +31,7 @@ Scenario:
 1. Show `fetchName()` and `showUser(n)`.
 2. Happy/recovery path, `n = 3`: `try 1 failed`, `try 2 failed`, `User: Ada`.
 3. Failure path, `n = 2` (tries exhausted): `try 1 failed`, `try 2 failed`, `Server is down, show cached user`.
-4. Uncomment `fun normalFun() { fetchName() }` and show the compile error.
+4. Temporarily add `fun normalFun() { fetchName() }` to the file, show the compile error, then remove it.
 
 Compile error (calling suspend from a normal function):
 ```
