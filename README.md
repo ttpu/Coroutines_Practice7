@@ -2,7 +2,8 @@
 
 Kotlin/JVM console project (kotlinx-coroutines-core 1.10.2). One function per task, all called from `main()`.
 
-Run: `./gradlew run`  (or run `main()` in IntelliJ IDEA).
+Requirements: JDK 17+.
+Run: open the project in IntelliJ IDEA and run `main()` (or `gradle run`).
 
 ---
 

@@ -99,21 +99,21 @@ fun task4() = runBlocking {
         val age = loadAge()
         println("sequential: $name, $age")
     }
-    println("Sequential time: $sequential ms")
+    println("Sequential time: $sequential ms (expected ~200)")
 
     val parallel = measureTimeMillis {
         val name = async { loadName() }
         val age = async { loadAge() }
         println("async + late await: ${name.await()}, ${age.await()}")
     }
-    println("Async time: $parallel ms")
+    println("Async time: $parallel ms (expected ~100)")
 
     val awaitEarly = measureTimeMillis {
         val name = async { loadName() }.await()
         val age = async { loadAge() }.await()
         println("async + early await: $name, $age")
     }
-    println("Early await time: $awaitEarly ms")
+    println("Early await time: $awaitEarly ms (expected ~200)")
 }
 
 @OptIn(DelicateCoroutinesApi::class)
